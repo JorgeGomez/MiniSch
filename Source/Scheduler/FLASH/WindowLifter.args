@@ -6,6 +6,8 @@
 "./Sources/HAL/MainConfig_c.obj"
 "./Sources/HAL/IntcInterrupts_c.obj"
 "./Sources/HAL/Exceptions_c.obj"
+"./Sources/MAL/Tasks_c.obj"
+"./Sources/MAL/Kernel_c.obj"
 "./Sources/main_c.obj"
 -sym dwarf-2
 -sym full

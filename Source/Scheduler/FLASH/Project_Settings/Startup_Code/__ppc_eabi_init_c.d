@@ -1,10 +1,10 @@
-Project_Settings/Startup_Code/__ppc_eabi_init_c.obj: C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Settings\Startup_Code\__ppc_eabi_init.c \
+Project_Settings/Startup_Code/__ppc_eabi_init_c.obj: C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\MiniSch\ JorgeWs\Source\Scheduler\Project_Settings\Startup_Code\__ppc_eabi_init.c \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\lib_ewl.prefix \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\common.prefix \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ewl_c_version.h \
-	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Prefix\MPC5606B_FLASH_VLE.prefix \
-	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\HAL\MPC5606B.h \
-	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\HAL\typedefs.h \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\MiniSch\ JorgeWs\Source\Scheduler\Prefix\MPC5606B_FLASH_VLE.prefix \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\MiniSch\ JorgeWs\Source\Scheduler\Project_Headers\HAL\MPC5606B.h \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\MiniSch\ JorgeWs\Source\Scheduler\Project_Headers\HAL\typedefs.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\stdint.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ansi_parms.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ewlGlobals.h \
