@@ -41,50 +41,49 @@
 /*
  * $Log: filename.h  $
   ============================================================================*/
-#ifndef MAINCONFIG_H_
-#define MAINCONFIG_H_
+#ifndef TASKS_H_
+#define TASKS_H_
 
 /* Includes */
 /*============================================================================*/
-#include "HAL\MPC5606B.h"
-#include "HAL\stdtypedef.h"
-
+#include "HAL/stdtypedef.h"
 
 /* Constants and types */
 /*============================================================================*/
-typedef enum
-{
-   PRESS = 0,
-   NO_PRESS
-}T_BUTTON;
+typedef void(*T_PFUNC)(void);
 
-/****Macros****/
-#define ON 		0
-#define OFF 	1
+typedef struct{
+	T_PFUNC PtrFunc;
+	T_ULONG Period;
+	T_UBYTE Offset;
+}S_TASK;
 
-#define PUSHB_1 	64
-#define PUSHB_2 	65
-#define PUSHB_3 	66
-#define PUSHB_4 	67
-
-#define LED_1		68
-#define LED_2		69
-#define LED_3		70
-#define LED_4		71
+typedef enum {
+	TASK1,
+	TASK2,
+	TASK3,
+	TASK4,
+	/*number of task*/
+	NUMBER_OF_TASKS
+}E_NUMTASK;
 
 /* Exported Variables */
 /*============================================================================*/
- 
+
+
 
 /* Exported functions prototypes */
 /*============================================================================*/
+PUBLIC_FCT void toggle_led1(void);
+PUBLIC_FCT void toggle_led2(void);
+PUBLIC_FCT void toggle_led3(void);
+PUBLIC_FCT void toggle_led4(void);
 
 /* Functions prototypes */
 /*============================================================================*/
-void init_system(void);
-T_BUTTON read_button(T_UBYTE lub_Ch);
-void led_on(T_UBYTE lub_Ch);
-void led_off(T_UBYTE lub_Ch);
-void led_toggle(T_UBYTE lub_Ch);
+void Task1_10ticks(void);
+void Task2_50ticks(void);
+void Task3_100ticks(void);
+void Task4_500ticks(void);
 
-#endif /* MAINCONFIG_H_ */ /* Notice: the file ends with a blank new line to avoid compiler warnings */
+#endif /* TASKS_H_ */  /* Notice: the file ends with a blank new line to avoid compiler warnings */

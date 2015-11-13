@@ -1,30 +1,91 @@
-/*
- * MainConfig.c
- *
- *  Created on: Oct 29, 2015
- *      Author: Jorge
+/*============================================================================*/
+/*                        I BS SOFTWARE GROUP                                 */
+/*============================================================================*/
+/*                        OBJECT SPECIFICATION                                */
+/*============================================================================*/
+/*!
+ * $Source: filename.c $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
  */
+/*============================================================================*/
+/* DESCRIPTION :                                                              */
+/** \file
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
+*/
+/*============================================================================*/
+/* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
+/* AUTOMOTIVE GROUP, Interior Division, Body and Security                     */
+/* ALL RIGHTS RESERVED                                                        */
+/*                                                                            */
+/* The reproduction, transmission, or use of this document or its content is  */
+/* not permitted without express written authority. Offenders will be liable  */
+/* for damages.                                                               */
+/* All rights, including rights created by patent grant or registration of a  */
+/* utility model or design, are reserved.                                     */
+/*                                                                            */
+/*============================================================================*/
+/*============================================================================*/
+/*                    REUSE HISTORY - taken over from                         */
+/*============================================================================*/
+/*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
+/*----------------------------------------------------------------------------*/
+/*                     |                    |                                 */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.c  $
+  ============================================================================*/
 
-/*
- * MainConfig.c
- *
- *  Created on: Nov 12, 2015
- *      Author: Jorge
- */
+/* Includes */
+/*============================================================================*/
 #include "HAL/MPC5606B.h"
 #include "HAL/MainConfig.h"
 #include "HAL/IntcInterrupts.h"
+#include "HAL/stdtypedef.h"
 
-/****Functions****/
 
-void init_system(void)
-{
-	init_modes_and_clocks();
-	initPeriClkGen();
-	config_Emb_IO();
-	init_pit_interrupts();
-}
+/* Constants and types  */
+/*============================================================================*/
 
+
+
+/* Variables */
+/*============================================================================*/
+T_BOOLEAN rbi_TickFlag = FALSE;
+
+/* Private functions prototypes */
+/*============================================================================*/
+void init_modes_and_clocks(void);
+void disableWatchdog(void);
+void initPeriClkGen(void);
+void config_Emb_IO(void);
+void pit_config_fnc(void);
+void pit_isr(void);
+void init_pit_interrupts(void);
+
+
+/* Inline functions */
+/*============================================================================*/
+
+
+
+
+/* Private functions */
+/*============================================================================*/
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void init_modes_and_clocks(void) 
 {
 	ME.MER.R = 0x0000001D;          	/* Enable DRUN, RUN0, SAFE, RESET modes */
@@ -45,7 +106,13 @@ void init_modes_and_clocks(void)
   	while(ME.GS.B.S_CURRENTMODE != 4) {} /* Verify RUN0 is the current mode */
 }
 
-
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void disableWatchdog(void) 
 {
 	SWT.SR.R = 0x0000c520;     /* Write keys to clear soft lock bit */
@@ -53,51 +120,121 @@ void disableWatchdog(void)
   	SWT.CR.R = 0x8000010A;     /* Clear watchdog enable (WEN) */
 }        
 
-
-
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void initPeriClkGen(void) 
 {
 	/* Use the following code as required for MPC56xxB or MPC56xxS:*/
   	CGM.SC_DC2.R = 0x80;   /* MPC56xxB/S: Enable peri set 3 sysclk divided by 1  omg */
 }
 
-
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void config_Emb_IO(void)
 {
   	/* leds are seted as outputs */
   	SIU.PCR[LED_1].R = 0x200;
   	SIU.PCR[LED_2].R = 0x200;
+  	SIU.PCR[LED_3].R = 0x200;
+	SIU.PCR[LED_4].R = 0x200;
   		
   	/* Embedded board buttons are seted as inputs */
-  	SIU.PCR[PUSHB_1].R = 0x100;	
-  	SIU.PCR[PUSHB_2].R = 0x100;
+//  	SIU.PCR[PUSHB_1].R = 0x100;	
+//  	SIU.PCR[PUSHB_2].R = 0x100;
 
   	/* leds init leds in off */
 	SIU.GPDO[LED_1].R = OFF;
 	SIU.GPDO[LED_2].R = OFF;
+	SIU.GPDO[LED_3].R = OFF;
+	SIU.GPDO[LED_4].R = OFF;
 
 } 
 
+
+
+/* Exported functions */
+/*============================================================================*/
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+void init_system(void)
+{
+	init_modes_and_clocks();
+	initPeriClkGen();
+	config_Emb_IO();
+	init_pit_interrupts();
+}
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 T_BUTTON read_button(T_UBYTE lub_Ch)
 {
 	return SIU.GPDI[lub_Ch].B.PDI;
 }
 
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void led_on(T_UBYTE lub_Ch)
 {
 	SIU.GPDO[lub_Ch].R = ON;
 }
 
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void led_off(T_UBYTE lub_Ch)
 {
 	SIU.GPDO[lub_Ch].R = OFF;
 }
 
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void led_toggle(T_UBYTE lub_Ch)
 {
 	SIU.GPDO[lub_Ch].R ^= 1;
 }
 
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void pit_config_fnc(void)
 {
     PIT.PITMCR.B.MDIS   = 1;    
@@ -120,8 +257,13 @@ void pit_config_fnc(void)
 
 }
 
-
-
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void init_pit_interrupts(void)
 {
 	pit_config_fnc();
@@ -131,14 +273,20 @@ void init_pit_interrupts(void)
 		/*assign the priority*/
 }
 
-
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
 void pit_isr(void)
 {    		
 		/* There's single interrupt for the ch0 of the pit: */
 	
 		if(PIT.CH[0].TFLG.B.TIF == 1)  
 		{			
-			led_toggle(LED_1);			/* toggle LED */
+			rbi_TickFlag = TRUE;		/* toggle LED */
 			PIT.CH[0].TFLG.B.TIF = 1;	/* Clear interrupt flag */ 
 		}
 		else
@@ -146,3 +294,7 @@ void pit_isr(void)
 			/* ... */
 		}
 }
+
+
+
+ /* Notice: the file ends with a blank new line to avoid compiler warnings */

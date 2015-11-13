@@ -4,7 +4,7 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: filename.x $
+ * $Source: filename.c $
  * $Revision: version $
  * $Author: author $
  * $Date: date $
@@ -39,52 +39,89 @@
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: filename.h  $
+ * $Log: filename.c  $
   ============================================================================*/
-#ifndef MAINCONFIG_H_
-#define MAINCONFIG_H_
 
 /* Includes */
 /*============================================================================*/
-#include "HAL\MPC5606B.h"
-#include "HAL\stdtypedef.h"
+#include "Application/BlinkingLedsApp.h"
 
 
-/* Constants and types */
+/* Constants and types  */
 /*============================================================================*/
-typedef enum
+
+
+
+/* Variables */
+/*============================================================================*/
+
+
+
+/* Private functions prototypes */
+/*============================================================================*/
+
+
+
+/* Inline functions */
+/*============================================================================*/
+
+
+
+
+/* Private functions */
+/*============================================================================*/
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+void toggle_led1(void)
 {
-   PRESS = 0,
-   NO_PRESS
-}T_BUTTON;
+	led_toggle(LED_1);
+}
 
-/****Macros****/
-#define ON 		0
-#define OFF 	1
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+void toggle_led2(void)
+{
+	led_toggle(LED_2);
+}
 
-#define PUSHB_1 	64
-#define PUSHB_2 	65
-#define PUSHB_3 	66
-#define PUSHB_4 	67
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+void toggle_led3(void)
+{
+	led_toggle(LED_3);
+}
 
-#define LED_1		68
-#define LED_2		69
-#define LED_3		70
-#define LED_4		71
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+void toggle_led4(void)
+{
+	led_toggle(LED_4);
+}
 
-/* Exported Variables */
+/* Exported functions */
 /*============================================================================*/
- 
 
-/* Exported functions prototypes */
-/*============================================================================*/
 
-/* Functions prototypes */
-/*============================================================================*/
-void init_system(void);
-T_BUTTON read_button(T_UBYTE lub_Ch);
-void led_on(T_UBYTE lub_Ch);
-void led_off(T_UBYTE lub_Ch);
-void led_toggle(T_UBYTE lub_Ch);
 
-#endif /* MAINCONFIG_H_ */ /* Notice: the file ends with a blank new line to avoid compiler warnings */
+ /* Notice: the file ends with a blank new line to avoid compiler warnings */

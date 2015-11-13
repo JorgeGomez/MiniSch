@@ -4,7 +4,7 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: filename.x $
+ * $Source: filename.c $
  * $Revision: version $
  * $Author: author $
  * $Date: date $
@@ -39,52 +39,103 @@
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: filename.h  $
+ * $Log: filename.c  $
   ============================================================================*/
-#ifndef MAINCONFIG_H_
-#define MAINCONFIG_H_
 
 /* Includes */
 /*============================================================================*/
-#include "HAL\MPC5606B.h"
-#include "HAL\stdtypedef.h"
+
+#include "MAL/Tasks.h"
 
 
-/* Constants and types */
+/* Constants and types  */
 /*============================================================================*/
-typedef enum
+
+/*List of task for the scheduler*/
+const S_TASK cas_TaskList[NUMBER_OF_TASKS] = 
 {
-   PRESS = 0,
-   NO_PRESS
-}T_BUTTON;
+	/*	Name					Execution Period(ticks)		Startup delay(ticks)	*/
+	{	Task1_10ticks,					10,							1	},
+	{	Task2_50ticks,					50, 						2	},
+	{	Task3_100ticks,					100, 						3	},
+	{	Task4_500ticks,					500, 						4	}
+/*	{	Taskn,							Period, 				  offset}	Add if you need a new task*/
+};
 
-/****Macros****/
-#define ON 		0
-#define OFF 	1
 
-#define PUSHB_1 	64
-#define PUSHB_2 	65
-#define PUSHB_3 	66
-#define PUSHB_4 	67
-
-#define LED_1		68
-#define LED_2		69
-#define LED_3		70
-#define LED_4		71
-
-/* Exported Variables */
-/*============================================================================*/
- 
-
-/* Exported functions prototypes */
+/* Variables */
 /*============================================================================*/
 
-/* Functions prototypes */
-/*============================================================================*/
-void init_system(void);
-T_BUTTON read_button(T_UBYTE lub_Ch);
-void led_on(T_UBYTE lub_Ch);
-void led_off(T_UBYTE lub_Ch);
-void led_toggle(T_UBYTE lub_Ch);
 
-#endif /* MAINCONFIG_H_ */ /* Notice: the file ends with a blank new line to avoid compiler warnings */
+
+/* Private functions prototypes */
+/*============================================================================*/
+
+
+
+/* Inline functions */
+/*============================================================================*/
+
+
+
+
+/* Private functions */
+/*============================================================================*/
+
+/*Add a new definition if you need a new task*/
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+ void Task1_10ticks(void)
+{
+	toggle_led1();
+}
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+void Task2_50ticks(void)
+{
+	toggle_led2();
+}
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+void Task3_100ticks(void)
+{
+	toggle_led3();
+}
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+void Task4_500ticks(void)
+{
+	toggle_led4();
+}
+
+
+/* Exported functions */
+/*============================================================================*/
+
+
+
+ /* Notice: the file ends with a blank new line to avoid compiler warnings */
