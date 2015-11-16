@@ -1,21 +1,20 @@
 /*============================================================================*/
-/*                        I BS SOFTWARE GROUP                                 */
+/*                               AEP                                          */
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: filename.x $
- * $Revision: version $
- * $Author: author $
- * $Date: date $
+ * $Source: BlinkingLedsApp.h
+ * $Revision: version 1.0
+ * $Author: Jose Luis Martinez Vicuña
+ * $Date: Nov/13/2015
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
-/** \file
-    short description in one sentence end with dot.
-    detailed
-    multiline
-    description of the file
+/** \
+ * This file provides the headers of the functions of application which send to
+ * call MainConfig.c where the funtion is used led_toggle which it operates whit
+ * a OR to change the status bit in off and on
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -34,12 +33,14 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
-/*                     |                    |                                 */
+/*                     |          Scheduler          |           1.0          */
+/* 					   |							 |Project_Headers/Aplication*/
 /*============================================================================*/
-/*                               OBJECT HISTORY                               */
+/*                               OBJECT HISTORY 							  */
+/* version 1.0			|        11/13/2015		|  Jose Luis Martinez Vicuña  */
 /*============================================================================*/
 /*
- * $Log: filename.h  $
+ * $Log: BlinkingLedsApp.h  $
   ============================================================================*/
 #ifndef BLINKINGLEDSAPP_H_
 #define BLINKINGLEDSAPP_H_
