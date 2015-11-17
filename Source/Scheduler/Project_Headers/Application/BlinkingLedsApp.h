@@ -1,11 +1,10 @@
 /*============================================================================*/
-/*                                 AEP                                        */
+/*                               AEP                                          */
 /*============================================================================*/
-/*                        OBJECT SPECIFICATION 
- * This file provides the headers of the functions of file MainConfig.c       */
+/*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: MainConfig.h
+ * $Source: BlinkingLedsApp.h
  * $Revision: version 1.0
  * $Author: Jose Luis Martinez Vicuña
  * $Date: Nov/13/2015
@@ -13,10 +12,9 @@
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \
- * This file provides the headers of the functions of general configuration as
- * system configuration with init_system, Pad Data In to pins with  read_button
- * and power on, power off and toggle to pins, also it contains definitions of 
- * the pins where some pins are mapped general purpose
+ * This file provides the headers of the functions of application which send to
+ * call MainConfig.c where the funtion is used led_toggle which it operates whit
+ * a OR to change the status bit in off and on
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -35,59 +33,40 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
-/*                     |       Scheduler    |              1.0                */
-/*					   |					|      Project_Headers/HAL        */
+/*                     |          Scheduler          |           1.0          */
+/* 					   |							 |Project_Headers/Aplication*/
 /*============================================================================*/
 /*                               OBJECT HISTORY 							  */
-/* version 1.0		   |     11/13/2015     |  Jose Luis Martinez Vicuña      */
+/* version 1.0			|        11/13/2015		|  Jose Luis Martinez Vicuña  */
 /*============================================================================*/
 /*
- * $Log: MainConfig.h  $
+ * $Log: BlinkingLedsApp.h  $
   ============================================================================*/
-#ifndef MAINCONFIG_H_
-#define MAINCONFIG_H_
+#ifndef BLINKINGLEDSAPP_H_
+#define BLINKINGLEDSAPP_H_
 
 /* Includes */
 /*============================================================================*/
-#include "HAL\MPC5606B.h"
-#include "HAL\stdtypedef.h"
-
+#include "HAL/stdtypedef.h"
+#include "HAL/MainConfig.h"
 
 /* Constants and types */
 /*============================================================================*/
-typedef enum
-{
-   PRESS = 0,
-   NO_PRESS
-}T_BUTTON;
 
-/****Macros****/
-#define ON 		0
-#define OFF 	1
-
-#define PUSHB_1 	64
-#define PUSHB_2 	65
-#define PUSHB_3 	66
-#define PUSHB_4 	67
-
-#define LED_1		68
-#define LED_2		69
-#define LED_3		70
-#define LED_4		71
 
 /* Exported Variables */
 /*============================================================================*/
- 
+
 
 /* Exported functions prototypes */
 /*============================================================================*/
+PUBLIC_FCT void led_toggle(T_UBYTE lub_Ch);
 
 /* Functions prototypes */
 /*============================================================================*/
-void init_system(void);
-T_BUTTON read_button(T_UBYTE lub_Ch);
-void led_on(T_UBYTE lub_Ch);
-void led_off(T_UBYTE lub_Ch);
-void led_toggle(T_UBYTE lub_Ch);
+void toggle_led1(void);
+void toggle_led2(void);
+void toggle_led3(void);
+void toggle_led4(void);
 
-#endif /* MAINCONFIG_H_ */ /* Notice: the file ends with a blank new line to avoid compiler warnings */
+#endif /* BLINKINGLEDSAPP_H_ */  /* Notice: the file ends with a blank new line to avoid compiler warnings */

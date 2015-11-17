@@ -1,22 +1,21 @@
 /*============================================================================*/
-/*                                 AEP                                        */
+/*                                  AEP                                       */
 /*============================================================================*/
-/*                        OBJECT SPECIFICATION 
- * This file provides the headers of the functions of file MainConfig.c       */
+/*                        OBJECT SPECIFICATION                                */
+/*      This file provides the headers of the functions of Tasks.c            */
 /*============================================================================*/
 /*!
- * $Source: MainConfig.h
- * $Revision: version 1.0
- * $Author: Jose Luis Martinez Vicuña
- * $Date: Nov/13/2015
+ * $Source: Tasks.h $
+ * $Revision: version 1.0 $
+ * $Author: Jose Luis Martinez Vicuña $
+ * $Date: Nov/13/2015 $
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
-/** \
- * This file provides the headers of the functions of general configuration as
- * system configuration with init_system, Pad Data In to pins with  read_button
- * and power on, power off and toggle to pins, also it contains definitions of 
- * the pins where some pins are mapped general purpose
+/** \file
+ * This file provides the headers of the functions of the Tasks which are defined
+ * in Tasks.c, also is the structure S__TASK which receives the function, period
+ * and an offset and the number of tasks to be executed.
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -35,59 +34,58 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
-/*                     |       Scheduler    |              1.0                */
-/*					   |					|      Project_Headers/HAL        */
+/*                     |      Scheduler     |            1.0                  */
+/*					   |					|      Project_Headers/MAL  	  */
 /*============================================================================*/
-/*                               OBJECT HISTORY 							  */
+/*                               OBJECT HISTORY                               */
 /* version 1.0		   |     11/13/2015     |  Jose Luis Martinez Vicuña      */
 /*============================================================================*/
 /*
- * $Log: MainConfig.h  $
+ * $Log: Tasks.h  $
   ============================================================================*/
-#ifndef MAINCONFIG_H_
-#define MAINCONFIG_H_
+#ifndef TASKS_H_
+#define TASKS_H_
 
 /* Includes */
 /*============================================================================*/
-#include "HAL\MPC5606B.h"
-#include "HAL\stdtypedef.h"
-
+#include "HAL/stdtypedef.h"
 
 /* Constants and types */
 /*============================================================================*/
-typedef enum
-{
-   PRESS = 0,
-   NO_PRESS
-}T_BUTTON;
+typedef void(*T_PFUNC)(void);
 
-/****Macros****/
-#define ON 		0
-#define OFF 	1
+typedef struct{
+	T_PFUNC PtrFunc;
+	T_ULONG Period;
+	T_UBYTE Offset;
+}S_TASK;
 
-#define PUSHB_1 	64
-#define PUSHB_2 	65
-#define PUSHB_3 	66
-#define PUSHB_4 	67
-
-#define LED_1		68
-#define LED_2		69
-#define LED_3		70
-#define LED_4		71
+typedef enum {
+	TASK1,
+	TASK2,
+	TASK3,
+	TASK4,
+	/*number of task*/
+	NUMBER_OF_TASKS
+}E_NUMTASK;
 
 /* Exported Variables */
 /*============================================================================*/
- 
+
+
 
 /* Exported functions prototypes */
 /*============================================================================*/
+PUBLIC_FCT void toggle_led1(void);
+PUBLIC_FCT void toggle_led2(void);
+PUBLIC_FCT void toggle_led3(void);
+PUBLIC_FCT void toggle_led4(void);
 
 /* Functions prototypes */
 /*============================================================================*/
-void init_system(void);
-T_BUTTON read_button(T_UBYTE lub_Ch);
-void led_on(T_UBYTE lub_Ch);
-void led_off(T_UBYTE lub_Ch);
-void led_toggle(T_UBYTE lub_Ch);
+void Task1_10ticks(void);
+void Task2_50ticks(void);
+void Task3_100ticks(void);
+void Task4_500ticks(void);
 
-#endif /* MAINCONFIG_H_ */ /* Notice: the file ends with a blank new line to avoid compiler warnings */
+#endif /* TASKS_H_ */  /* Notice: the file ends with a blank new line to avoid compiler warnings */
