@@ -59,7 +59,7 @@ typedef enum
 {
    PRESS = 0,
    NO_PRESS
-}T_BUTTON;
+}E_BUTTON;
 
 /****Macros****/
 #define ON 		0
@@ -85,7 +85,7 @@ typedef enum
 /* Functions prototypes */
 /*============================================================================*/
 void init_system(void);
-T_BUTTON read_button(T_UBYTE lub_Ch);
+E_BUTTON read_button(T_UBYTE lub_Ch);
 void led_on(T_UBYTE lub_Ch);
 void led_off(T_UBYTE lub_Ch);
 void led_toggle(T_UBYTE lub_Ch);

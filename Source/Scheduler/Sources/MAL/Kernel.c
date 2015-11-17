@@ -56,7 +56,7 @@
 /* Variables */
 /*============================================================================*/
 
-T_ULONG rul_TimeCounter[NUMBER_OF_TASKS];
+T_ULONG raul_TimeCounter[NUMBER_OF_TASKS];
 
 
 /* Private functions prototypes */
@@ -93,7 +93,7 @@ void init_Sch_TimeCntrs(void)
 	T_ULONG lul_Position;
 	for(lul_Position = 0; lul_Position < NUMBER_OF_TASKS; lul_Position++)
 	{
-		rul_TimeCounter[lul_Position] = cas_TaskList[NUMBER_OF_TASKS].Offset;
+		raul_TimeCounter[lul_Position] = cas_TaskList[NUMBER_OF_TASKS].Offset;
 	}
 }
 
@@ -115,13 +115,13 @@ void Sch_function_execution(void)
 				rbi_TickFlag = FALSE;
 				for(lul_ArrayPosition = 0; lul_ArrayPosition < NUMBER_OF_TASKS; lul_ArrayPosition++)
 				{
-					if(rul_TimeCounter[lul_ArrayPosition] != 0)
+					if(raul_TimeCounter[lul_ArrayPosition] != 0)
 					{
-						rul_TimeCounter[lul_ArrayPosition]--;
+						raul_TimeCounter[lul_ArrayPosition]--;
 					}
 					else
 					{
-						rul_TimeCounter[lul_ArrayPosition] = cas_TaskList[lul_ArrayPosition].Period;
+						raul_TimeCounter[lul_ArrayPosition] = cas_TaskList[lul_ArrayPosition].Period;
 						cas_TaskList[lul_ArrayPosition].PtrFunc();
 					}
 				}

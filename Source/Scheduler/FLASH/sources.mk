@@ -89,5 +89,6 @@ SUBDIRS := \
 Sources \
 Sources/MAL \
 Sources/HAL \
+Sources/Application \
 Project_Settings/Startup_Code \
 

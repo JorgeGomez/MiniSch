@@ -190,7 +190,7 @@ void init_system(void)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  Return the value of the input.
  **************************************************************/
-T_BUTTON read_button(T_UBYTE lub_Ch)
+E_BUTTON read_button(T_UBYTE lub_Ch)
 {
 	return SIU.GPDI[lub_Ch].B.PDI;
 }
