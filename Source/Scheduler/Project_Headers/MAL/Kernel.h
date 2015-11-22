@@ -4,17 +4,18 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: Kernel.h $
- * $Revision: version 1.0 $
- * $Author: Jose Luis Martinez Vicuña $
- * $Date: Nov/13/2015 $
+ * $Source: filename.x $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
- * This file provides the headers of the functions of Kernel.c which are used
- * to configure the timer that is used to kernel, also the implementation of 
- * the scheduler.
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -33,14 +34,12 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
-/*                     |      Scheduler     |            1.0                  */
-/*					   |					|      Project_Headers/MAL  	  */
+/*                     |                    |                                 */
 /*============================================================================*/
 /*                               OBJECT HISTORY                               */
-/* version 1.0		   |     11/!3/2015     |  Jose Luis Martinez Vicuña      */
 /*============================================================================*/
 /*
- * $Log: Kernel.h  $
+ * $Log: filename.h  $
   ============================================================================*/
 #ifndef KERNEL_H_
 #define KERNEL_H_

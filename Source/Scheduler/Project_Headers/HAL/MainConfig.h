@@ -1,22 +1,21 @@
 /*============================================================================*/
-/*                                 AEP                                        */
+/*                        I BS SOFTWARE GROUP                                 */
 /*============================================================================*/
-/*                        OBJECT SPECIFICATION 
- * This file provides the headers of the functions of file MainConfig.c       */
+/*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: MainConfig.h
- * $Revision: version 1.0
- * $Author: Jose Luis Martinez Vicuña
- * $Date: Nov/13/2015
+ * $Source: filename.x $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
-/** \
- * This file provides the headers of the functions of general configuration as
- * system configuration with init_system, Pad Data In to pins with  read_button
- * and power on, power off and toggle to pins, also it contains definitions of 
- * the pins where some pins are mapped general purpose
+/** \file
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -35,14 +34,12 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
-/*                     |       Scheduler    |              1.0                */
-/*					   |					|      Project_Headers/HAL        */
+/*                     |                    |                                 */
 /*============================================================================*/
-/*                               OBJECT HISTORY 							  */
-/* version 1.0		   |     11/13/2015     |  Jose Luis Martinez Vicuña      */
+/*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: MainConfig.h  $
+ * $Log: filename.h  $
   ============================================================================*/
 #ifndef MAINCONFIG_H_
 #define MAINCONFIG_H_
