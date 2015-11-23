@@ -1,9 +1,13 @@
 /*============================================================================*/
+<<<<<<< HEAD
 /*                         			AEP		                                  */
+/*                        I BS SOFTWARE GROUP                                 */
+>>>>>>> origin/BranchJose
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
+<<<<<<< HEAD
  * $Source: main.c $
  * $Revision: 1.0 $
  * $Author: Jorge Gomez $
@@ -13,6 +17,20 @@
 /* DESCRIPTION :                                                              */
 /** \main
     MAIN FUNCTION.
+=======
+ * $Source: filename.c $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
+ */
+/*============================================================================*/
+/* DESCRIPTION :                                                              */
+/** \file
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
+>>>>>>> origin/BranchJose
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -27,6 +45,7 @@
 /*                                                                            */
 /*============================================================================*/
 /*============================================================================*/
+<<<<<<< HEAD
 /*                    			OBJECT HISTORY                          	  */
 /*============================================================================*/
 /*  REVISION 	|  		DATE  		|     COMMENT 	     	  |		AUTHOR 	  */
@@ -37,6 +56,18 @@
 /*============================================================================*/
 /*
  * $Log: main.c  $
+=======
+/*                    REUSE HISTORY - taken over from                         */
+/*============================================================================*/
+/*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
+/*----------------------------------------------------------------------------*/
+/*                     |                    |                                 */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.c  $
+>>>>>>> origin/BranchJose
   ============================================================================*/
 
 /* Includes */
@@ -69,6 +100,7 @@
 /* Private functions */
 /*============================================================================*/
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  main
  *  Description          :  Main function of the program
@@ -77,6 +109,15 @@
  *  Precondition         :  The correct initialization of the startup code.
  *  Postcondition        :  The cpu can be configured and the program can start.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void main(void) 
 {
 	init_system();

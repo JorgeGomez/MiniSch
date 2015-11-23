@@ -1,4 +1,5 @@
 /*============================================================================*/
+<<<<<<< HEAD
 /*                                 AEP                                        */
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION 
@@ -17,6 +18,25 @@
  * system configuration with init_system, Pad Data In to pins with  read_button
  * and power on, power off and toggle to pins, also it contains definitions of 
  * the pins where some pins are mapped general purpose
+=======
+/*                        I BS SOFTWARE GROUP                                 */
+/*============================================================================*/
+/*                        OBJECT SPECIFICATION                                */
+/*============================================================================*/
+/*!
+ * $Source: filename.x $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
+ */
+/*============================================================================*/
+/* DESCRIPTION :                                                              */
+/** \file
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
+>>>>>>> origin/BranchJose
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -35,6 +55,7 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /*                     |       Scheduler    |              1.0                */
 /*					   |					|      Project_Headers/HAL        */
 /*============================================================================*/
@@ -43,6 +64,14 @@
 /*============================================================================*/
 /*
  * $Log: MainConfig.h  $
+=======
+/*                     |                    |                                 */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.h  $
+>>>>>>> origin/BranchJose
   ============================================================================*/
 #ifndef MAINCONFIG_H_
 #define MAINCONFIG_H_
@@ -85,7 +114,11 @@ typedef enum
 /* Functions prototypes */
 /*============================================================================*/
 void init_system(void);
+<<<<<<< HEAD
 E_BUTTON read_button(T_UBYTE lub_Ch);
+=======
+T_BUTTON read_button(T_UBYTE lub_Ch);
+>>>>>>> origin/BranchJose
 void led_on(T_UBYTE lub_Ch);
 void led_off(T_UBYTE lub_Ch);
 void led_toggle(T_UBYTE lub_Ch);

@@ -1,10 +1,15 @@
 /*============================================================================*/
+<<<<<<< HEAD
 /*                         			AEP		                                  */
+=======
+/*                        I BS SOFTWARE GROUP                                 */
+>>>>>>> origin/BranchJose
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
  * $Source: Kernel.c $
+<<<<<<< HEAD
  * $Revision: 1.0 $
  * $Author: Jorge Gomez $
  * $Date: Nov/12/15 $
@@ -17,6 +22,19 @@
     Gives the algorithm to execute the different tasks.
     Do not modify this file.
     All the modifications shall be do it on Task.c and Task.h
+=======
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
+ */
+/*============================================================================*/
+/* DESCRIPTION :                                                              */
+/** \file
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
+>>>>>>> origin/BranchJose
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -31,6 +49,7 @@
 /*                                                                            */
 /*============================================================================*/
 /*============================================================================*/
+<<<<<<< HEAD
 /*                    			OBJECT HISTORY                          	  */
 /*============================================================================*/
 /*  REVISION 	|  		DATE  |     COMMENT	     	 	 	  |AUTHOR  		  */
@@ -41,6 +60,18 @@
 /*============================================================================*/
 /*
  * $Log: Kernel.c  $
+=======
+/*                    REUSE HISTORY - taken over from                         */
+/*============================================================================*/
+/*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
+/*----------------------------------------------------------------------------*/
+/*                     |                    |                                 */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.c  $
+>>>>>>> origin/BranchJose
   ============================================================================*/
 
 /* Includes */
@@ -56,7 +87,11 @@
 /* Variables */
 /*============================================================================*/
 
+<<<<<<< HEAD
 T_ULONG raul_TimeCounter[NUMBER_OF_TASKS];
+=======
+T_ULONG rul_TimeCounter[NUMBER_OF_TASKS];
+>>>>>>> origin/BranchJose
 
 
 /* Private functions prototypes */
@@ -80,6 +115,7 @@ PUBLIC_FCT void Task4_500ticks(void);
 /* Exported functions */
 /*============================================================================*/
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  init_Sch_TimeCntrs
  *  Description          :  Init function of Scheduler time counters
@@ -88,11 +124,21 @@ PUBLIC_FCT void Task4_500ticks(void);
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  Function Sch_function_execution can be called.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void init_Sch_TimeCntrs(void)
 {
 	T_ULONG lul_Position;
 	for(lul_Position = 0; lul_Position < NUMBER_OF_TASKS; lul_Position++)
 	{
+<<<<<<< HEAD
 		raul_TimeCounter[lul_Position] = cas_TaskList[NUMBER_OF_TASKS].Offset;
 	}
 }
@@ -105,6 +151,19 @@ void init_Sch_TimeCntrs(void)
  *  Precondition         :  This function must be called after Scheduler init.
  *  Postcondition        :  The Scheduler it is going to execute.
  **************************************************************/
+=======
+		rul_TimeCounter[lul_Position] = cas_TaskList[NUMBER_OF_TASKS].Offset;
+	}
+}
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void Sch_function_execution(void)
 {
 	T_ULONG lul_ArrayPosition;
@@ -115,6 +174,7 @@ void Sch_function_execution(void)
 				rbi_TickFlag = FALSE;
 				for(lul_ArrayPosition = 0; lul_ArrayPosition < NUMBER_OF_TASKS; lul_ArrayPosition++)
 				{
+<<<<<<< HEAD
 					if(raul_TimeCounter[lul_ArrayPosition] != 0)
 					{
 						raul_TimeCounter[lul_ArrayPosition]--;
@@ -122,6 +182,15 @@ void Sch_function_execution(void)
 					else
 					{
 						raul_TimeCounter[lul_ArrayPosition] = cas_TaskList[lul_ArrayPosition].Period;
+=======
+					if(rul_TimeCounter[lul_ArrayPosition] != 0)
+					{
+						rul_TimeCounter[lul_ArrayPosition]--;
+					}
+					else
+					{
+						rul_TimeCounter[lul_ArrayPosition] = cas_TaskList[lul_ArrayPosition].Period;
+>>>>>>> origin/BranchJose
 						cas_TaskList[lul_ArrayPosition].PtrFunc();
 					}
 				}

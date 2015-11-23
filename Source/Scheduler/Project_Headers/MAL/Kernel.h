@@ -4,17 +4,31 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
+<<<<<<< HEAD
  * $Source: Kernel.h $
  * $Revision: version 1.0 $
  * $Author: Jose Luis Martinez Vicuña $
  * $Date: Nov/13/2015 $
+=======
+ * $Source: filename.x $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
+>>>>>>> origin/BranchJose
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
+<<<<<<< HEAD
  * This file provides the headers of the functions of Kernel.c which are used
  * to configure the timer that is used to kernel, also the implementation of 
  * the scheduler.
+=======
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
+>>>>>>> origin/BranchJose
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -33,6 +47,7 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /*                     |      Scheduler     |            1.0                  */
 /*					   |					|      Project_Headers/MAL  	  */
 /*============================================================================*/
@@ -41,6 +56,14 @@
 /*============================================================================*/
 /*
  * $Log: Kernel.h  $
+=======
+/*                     |                    |                                 */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.h  $
+>>>>>>> origin/BranchJose
   ============================================================================*/
 #ifndef KERNEL_H_
 #define KERNEL_H_

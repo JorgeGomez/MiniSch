@@ -1,4 +1,5 @@
 /*============================================================================*/
+<<<<<<< HEAD
 /*                                  AEP                                       */
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION                                */
@@ -9,13 +10,31 @@
  * $Revision: version 1.0 $
  * $Author: Jose Luis Martinez Vicuña $
  * $Date: Nov/13/2015 $
+=======
+/*                        I BS SOFTWARE GROUP                                 */
+/*============================================================================*/
+/*                        OBJECT SPECIFICATION                                */
+/*============================================================================*/
+/*!
+ * $Source: filename.x $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
+>>>>>>> origin/BranchJose
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
 /** \file
+<<<<<<< HEAD
  * This file provides the headers of the functions of the Tasks which are defined
  * in Tasks.c, also is the structure S__TASK which receives the function, period
  * and an offset and the number of tasks to be executed.
+=======
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
+>>>>>>> origin/BranchJose
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -34,6 +53,7 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
+<<<<<<< HEAD
 /*                     |      Scheduler     |            1.0                  */
 /*					   |					|      Project_Headers/MAL  	  */
 /*============================================================================*/
@@ -42,6 +62,14 @@
 /*============================================================================*/
 /*
  * $Log: Tasks.h  $
+=======
+/*                     |                    |                                 */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.h  $
+>>>>>>> origin/BranchJose
   ============================================================================*/
 #ifndef TASKS_H_
 #define TASKS_H_

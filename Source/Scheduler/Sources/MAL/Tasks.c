@@ -1,9 +1,14 @@
 /*============================================================================*/
+<<<<<<< HEAD
 /*                         			AEP		                                  */
+=======
+/*                        I BS SOFTWARE GROUP                                 */
+>>>>>>> origin/BranchJose
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
+<<<<<<< HEAD
  * $Source: Tasks.c $
  * $Revision: 1.0 $
  * $Author: Jorge Gomez $
@@ -14,6 +19,20 @@
 /** \Tasks
     This file contain the tasks.
     Modify this file to add a new task.
+=======
+ * $Source: filename.c $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
+ */
+/*============================================================================*/
+/* DESCRIPTION :                                                              */
+/** \file
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
+>>>>>>> origin/BranchJose
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -28,6 +47,7 @@
 /*                                                                            */
 /*============================================================================*/
 /*============================================================================*/
+<<<<<<< HEAD
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*  REVISION 	|  		DATE  		|     COMMENT	     	  |		AUTHOR 	  */
@@ -38,6 +58,18 @@
 /*============================================================================*/
 /*
  * $Log: Tasks.c  $
+=======
+/*                    REUSE HISTORY - taken over from                         */
+/*============================================================================*/
+/*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
+/*----------------------------------------------------------------------------*/
+/*                     |                    |                                 */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.c  $
+>>>>>>> origin/BranchJose
   ============================================================================*/
 
 /* Includes */
@@ -49,9 +81,13 @@
 /* Constants and types  */
 /*============================================================================*/
 
+<<<<<<< HEAD
 /*
  * --------------------List of task for the scheduler-----------------------------
  * */
+=======
+/*List of task for the scheduler*/
+>>>>>>> origin/BranchJose
 const S_TASK cas_TaskList[NUMBER_OF_TASKS] = 
 {
 	/*	Name					Execution Period(ticks)		Startup delay(ticks)	*/
@@ -82,6 +118,7 @@ const S_TASK cas_TaskList[NUMBER_OF_TASKS] =
 /* Private functions */
 /*============================================================================*/
 
+<<<<<<< HEAD
 /*
  * --------Add a new definition if you need a new task--------------------------
  * */
@@ -94,11 +131,23 @@ const S_TASK cas_TaskList[NUMBER_OF_TASKS] =
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  Function gsc_sch_core_exec can be called.
  **************************************************************/
+=======
+/*Add a new definition if you need a new task*/
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
  void Task1_10ticks(void)
 {
 	toggle_led1();
 }
 
+<<<<<<< HEAD
  /**************************************************************
   *  Name                 :  Task2_50ticks
   *  Description          :  Init function of Scheduler module
@@ -107,11 +156,21 @@ const S_TASK cas_TaskList[NUMBER_OF_TASKS] =
   *  Precondition         :  This function must be called after cpu initialization.
   *  Postcondition        :  Function gsc_sch_core_exec can be called.
   **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void Task2_50ticks(void)
 {
 	toggle_led2();
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  Task3_100ticks
  *  Description          :  Init function of Scheduler module
@@ -120,11 +179,21 @@ void Task2_50ticks(void)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  Function gsc_sch_core_exec can be called.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void Task3_100ticks(void)
 {
 	toggle_led3();
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  Task4_500ticks
  *  Description          :  Init function of Scheduler module
@@ -133,6 +202,15 @@ void Task3_100ticks(void)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  Function gsc_sch_core_exec can be called.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void Task4_500ticks(void)
 {
 	toggle_led4();

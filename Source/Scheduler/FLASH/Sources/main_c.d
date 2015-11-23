@@ -14,6 +14,12 @@ Sources/main_c.obj: C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Mini\
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\cstdint \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\limits_api.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ewl_lib_ext1.h \
+<<<<<<< HEAD
 	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Mini\ Sch\Source\Scheduler\Project_Headers\HAL\stdtypedef.h \
 	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Mini\ Sch\Source\Scheduler\Project_Headers\MAL\Kernel.h \
 	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Mini\ Sch\Source\Scheduler\Project_Headers\MAL\Tasks.h 
+=======
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\MiniSch\ JorgeWs\Source\Scheduler\Project_Headers\HAL\stdtypedef.h \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\MiniSch\ JorgeWs\Source\Scheduler\Project_Headers\MAL\Kernel.h \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\MiniSch\ JorgeWs\Source\Scheduler\Project_Headers\MAL\Tasks.h 
+>>>>>>> origin/BranchJose

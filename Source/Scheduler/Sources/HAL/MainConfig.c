@@ -1,9 +1,14 @@
 /*============================================================================*/
+<<<<<<< HEAD
 /*                         			AEP		                                  */
+=======
+/*                        I BS SOFTWARE GROUP                                 */
+>>>>>>> origin/BranchJose
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
+<<<<<<< HEAD
  * $Source: MainConfig.c $
  * $Revision: 1.0 $
  * $Author: Jorge Gomez $
@@ -13,6 +18,20 @@
 /* DESCRIPTION :                                                              */
 /** \MainConfig
     Provide the function to initialize the differents periphereals of the uc.
+=======
+ * $Source: filename.c $
+ * $Revision: version $
+ * $Author: author $
+ * $Date: date $
+ */
+/*============================================================================*/
+/* DESCRIPTION :                                                              */
+/** \file
+    short description in one sentence end with dot.
+    detailed
+    multiline
+    description of the file
+>>>>>>> origin/BranchJose
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -27,6 +46,7 @@
 /*                                                                            */
 /*============================================================================*/
 /*============================================================================*/
+<<<<<<< HEAD
 /*                    			OBJECT HISTORY                          	  */
 /*============================================================================*/
 /*  REVISION 	|  		DATE  		|     	COMMENT     	  |		AUTHOR 	  */
@@ -37,6 +57,18 @@
 /*============================================================================*/
 /*
  * $Log: MainConfig.c  $
+=======
+/*                    REUSE HISTORY - taken over from                         */
+/*============================================================================*/
+/*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
+/*----------------------------------------------------------------------------*/
+/*                     |                    |                                 */
+/*============================================================================*/
+/*                               OBJECT HISTORY                               */
+/*============================================================================*/
+/*
+ * $Log: filename.c  $
+>>>>>>> origin/BranchJose
   ============================================================================*/
 
 /* Includes */
@@ -76,6 +108,7 @@ void init_pit_interrupts(void);
 /* Private functions */
 /*============================================================================*/
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  init_modes_and_clocks
  *  Description          :  Init function of Scheduler module
@@ -84,6 +117,15 @@ void init_pit_interrupts(void);
  *  Precondition         :  This function must be called on the cpu initialization.
  *  Postcondition        :  The cpu are running on RUN mode 1.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void init_modes_and_clocks(void) 
 {
 	ME.MER.R = 0x0000001D;          	/* Enable DRUN, RUN0, SAFE, RESET modes */
@@ -104,6 +146,7 @@ void init_modes_and_clocks(void)
   	while(ME.GS.B.S_CURRENTMODE != 4) {} /* Verify RUN0 is the current mode */
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  disableWatchdog
  *  Description          :  Function to disable the watchdog
@@ -112,6 +155,15 @@ void init_modes_and_clocks(void)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  The watchdog is disabled.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void disableWatchdog(void) 
 {
 	SWT.SR.R = 0x0000c520;     /* Write keys to clear soft lock bit */
@@ -119,6 +171,7 @@ void disableWatchdog(void)
   	SWT.CR.R = 0x8000010A;     /* Clear watchdog enable (WEN) */
 }        
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  initPeriClkGen
  *  Description          :  Init function of peripherials set 
@@ -127,12 +180,22 @@ void disableWatchdog(void)
  *  Precondition         :  This function must be called on the cpu initialization.
  *  Postcondition        :  The pheripherial set can be used.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void initPeriClkGen(void) 
 {
 	/* Use the following code as required for MPC56xxB or MPC56xxS:*/
   	CGM.SC_DC2.R = 0x80;   /* MPC56xxB/S: Enable peri set 3 sysclk divided by 1  omg */
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  config_Emb_IO
  *  Description          :  Init function of GPIO embedded
@@ -141,6 +204,15 @@ void initPeriClkGen(void)
  *  Precondition         :  This function must be called on the cpu initialization.
  *  Postcondition        :  The GPIOs can be used.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void config_Emb_IO(void)
 {
   	/* leds are seted as outputs */
@@ -166,6 +238,7 @@ void config_Emb_IO(void)
 /* Exported functions */
 /*============================================================================*/
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  init_system
  *  Description          :  Initialize all the modules of the cpu
@@ -174,6 +247,15 @@ void config_Emb_IO(void)
  *  Precondition         :  This function must be called after correct startup.
  *  Postcondition        :  All the cpu and the peripherials are initialized.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void init_system(void)
 {
 	init_modes_and_clocks();
@@ -182,6 +264,7 @@ void init_system(void)
 	init_pit_interrupts();
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  read_button
  *  Description          :  Read the status of a selected button
@@ -191,10 +274,21 @@ void init_system(void)
  *  Postcondition        :  Return the value of the input.
  **************************************************************/
 E_BUTTON read_button(T_UBYTE lub_Ch)
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+T_BUTTON read_button(T_UBYTE lub_Ch)
+>>>>>>> origin/BranchJose
 {
 	return SIU.GPDI[lub_Ch].B.PDI;
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  led_on
  *  Description          :  Turn on the selected LED
@@ -203,11 +297,21 @@ E_BUTTON read_button(T_UBYTE lub_Ch)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  The LED selected is going to turn on.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void led_on(T_UBYTE lub_Ch)
 {
 	SIU.GPDO[lub_Ch].R = ON;
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  led_off
  *  Description          :  Turn off the selected LED
@@ -216,11 +320,21 @@ void led_on(T_UBYTE lub_Ch)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  The selected LED  is going to turn off.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void led_off(T_UBYTE lub_Ch)
 {
 	SIU.GPDO[lub_Ch].R = OFF;
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  led_toggle
  *  Description          :  Toggle the LED status selected
@@ -229,11 +343,21 @@ void led_off(T_UBYTE lub_Ch)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  The selected LED is going to toggle its status.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void led_toggle(T_UBYTE lub_Ch)
 {
 	SIU.GPDO[lub_Ch].R ^= 1;
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  pit_config_fnc
  *  Description          :  Init function of PIT module
@@ -242,6 +366,15 @@ void led_toggle(T_UBYTE lub_Ch)
  *  Precondition         :  This function must be called on the cpu initialization.
  *  Postcondition        :  Function init_pit_interrupts can be called.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void pit_config_fnc(void)
 {
     PIT.PITMCR.B.MDIS   = 1;    
@@ -264,6 +397,7 @@ void pit_config_fnc(void)
 
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  init_pit_interrupts
  *  Description          :  Init function of PIT interrupt
@@ -272,6 +406,15 @@ void pit_config_fnc(void)
  *  Precondition         :  This function must be called after the function pit_config_fnc.
  *  Postcondition        :  The Interrupt Service Routine can be called.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void init_pit_interrupts(void)
 {
 	pit_config_fnc();
@@ -281,6 +424,7 @@ void init_pit_interrupts(void)
 		/*assign the priority*/
 }
 
+<<<<<<< HEAD
 /**************************************************************
  *  Name                 :  pit_isr
  *  Description          :  Interrupt service routine for PIT
@@ -289,6 +433,15 @@ void init_pit_interrupts(void)
  *  Precondition         :  This function must be called every ms.
  *  Postcondition        :  The TickFlag is setted.
  **************************************************************/
+=======
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+*/
+>>>>>>> origin/BranchJose
 void pit_isr(void)
 {    		
 		/* There's single interrupt for the ch0 of the pit: */

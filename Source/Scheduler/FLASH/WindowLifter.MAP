@@ -47,7 +47,11 @@ Link map of __startup
         7] toggle_led3 (func,global) found in BlinkingLedsApp_c.obj 
        6] Task4_500ticks (func,global) found in Tasks_c.obj 
         7] toggle_led4 (func,global) found in BlinkingLedsApp_c.obj 
+<<<<<<< HEAD
       5] raul_TimeCounter (object,global) found in Kernel_c.obj 
+=======
+      5] rul_TimeCounter (object,global) found in Kernel_c.obj 
+>>>>>>> origin/BranchJose
      4] Sch_function_execution (func,global) found in Kernel_c.obj 
     3] exit (func,global) found in libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
     3] >>> UNREFERENCED DUPLICATE exit
@@ -444,7 +448,11 @@ extabindex section layout
   address  Size   address  offset
   ---------------------------------
   00000000 000010 400003c0 00001000  1 .bss 	Kernel_c.obj 
+<<<<<<< HEAD
   00000000 000010 400003c0 00001000  8 raul_TimeCounter 	Kernel_c.obj 
+=======
+  00000000 000010 400003c0 00001000  8 rul_TimeCounter 	Kernel_c.obj 
+>>>>>>> origin/BranchJose
 
 
 Memory map:
@@ -469,12 +477,21 @@ Memory map:
                .sdata2 400003bc 00000000 00001000 00003800 00003800          0
                 .sbss2 400003bc 00000000 00001000 00003800 00003800          0
                   .bss 400003c0 00000010 00001000 00003800 00003800          0
+<<<<<<< HEAD
       .PPC.EMB.apuinfo 00006a28 00000000 00007a30 0000a228 0000a228          0
          .debug_abbrev          0000014f 00001000
            .debug_info          00001f28 0000114f
            .debug_line          00003140 00003077
             .debug_loc          000004cf 000061b7
        .debug_pubnames          0000054a 00006686
+=======
+      .PPC.EMB.apuinfo 00006bd4 00000000 00007be0 0000a3d4 0000a3d4          0
+         .debug_abbrev          0000014f 00001000
+           .debug_info          00001fcf 0000114f
+           .debug_line          0000324a 0000311e
+            .debug_loc          000004cf 00006368
+       .debug_pubnames          00000549 00006837
+>>>>>>> origin/BranchJose
 
 
 Linker generated symbols:
